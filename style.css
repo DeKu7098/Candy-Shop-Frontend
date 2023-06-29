@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#candyForm{
+    border:2px solid black;
+    height: 41rem;
+    width:35rem;
+    display: flex;
+    flex-direction: column;
+    font-size: larger;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.inputf{
+    border:2px solid red;
+}
+
+/* .inputb{
+    border:2px solid rgb(9, 9, 12);
+} */
