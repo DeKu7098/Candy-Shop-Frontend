@@ -1,25 +1,46 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 22px;
+    font-family: sans-serif;
+    min-width: 800px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
 }
 
-#candyForm{
-    border:2px solid black;
-    height: 41rem;
-    width:35rem;
-    display: flex;
-    flex-direction: column;
-    font-size: larger;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-evenly;
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
 }
 
-.inputf{
-    border:2px solid red;
+.styled-table tbody tr {
+    border-bottom: 20px solid #dddddd;
 }
 
-/* .inputb{
-    border:2px solid rgb(9, 9, 12);
-} */
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 10px solid #009879;
+}
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+.delete-btn{
+    background-color:rgb(209, 226, 226);
+    font-size: 22px;
+    cursor: pointer;
+    color: rgb(8, 8, 8);
+    height: 60px;
+    width: 110px;
+    border-radius: 30px;
+}
