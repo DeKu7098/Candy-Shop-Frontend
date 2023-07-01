@@ -17,13 +17,13 @@ async function form_submit(e) {
       price: candyPrice.value,
       quantity: candyQuantity.value,
     };
-    candyName.value =
+      candyName.value =
       candyDescription.value =
       candyPrice.value =
       candyQuantity.value =
         "";
     await toDatabase(obj);
-    form();
+    // form();
   } catch (error) {
     console.log(error);
   }
@@ -32,6 +32,7 @@ async function form_submit(e) {
 async function toDatabase(obj) {
   try {
     await axios.post("http://localhost:3000/userr/candy", obj);
+    form();
   } catch (error) {
     console.log(error);
   }
@@ -47,7 +48,8 @@ async function form() {
 	tbody.innerHTML = "";
 
   let res = await fromDatabase();
-
+  console.log(res)
+ 
 
   for (let i = 0; i < res.length; i++) {
     if ((i == 0)) {
@@ -155,7 +157,7 @@ quant = quant - 1;
   if (quant <= 0) {
     alert(`you cannot buy more ${parent2.children[1].innerHTML}`);
     deleteCandy(id);
-	form();
+    parent2.remove();
   } else {
     updateCandy(id, quant);
   }
@@ -171,7 +173,8 @@ function deductByTwo(e) {
 	  if (quant <= 0) {
 		alert(`you cannot buy more ${parent2.children[1].innerHTML}`);
 		deleteCandy(id);
-		form();
+    parent2.remove();
+		// form();
 	  } else {
 		updateCandy(id, quant);
 	  }
@@ -187,7 +190,8 @@ function deductByThree(e) {
 	  if (quant <= 0) {
 		alert(`you cannot buy more ${parent2.children[1].innerHTML}`);
 		deleteCandy(id);
-		form();
+    parent2.remove();
+		// form();
 	  } else {
 		updateCandy(id, quant);
 	  }
@@ -209,6 +213,7 @@ async function updateCandy(id, quant) {
 async function deleteCandy(id) {
   try {
     await axios.delete(`http://localhost:3000/userr/candy/${id}`);
+    form();
     console.log("deleted");
   } catch (error) {
     console.log(error);
